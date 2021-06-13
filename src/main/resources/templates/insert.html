@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>INSERT</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+    	body {
+        	background-color:#6495ed;
+        }
+        
+        h1,h4 {
+        	text-align:center;
+        }
+        
+        button {
+        	margin:10px;
+        	padding:6px 10px 6px 10px;
+        	background-color:white;
+        }
+        input {
+        	width:150px;
+        	height:20px;
+        }
+        input[type="date"] {
+        	width:152px;
+        	height:20px;
+        }
+        
+        select {
+        	width:158px;
+        	height:25px;
+        } 
+    </style>
+  </head> 
+  <body>
+    <h1>学生信息管理系统</h1>
+    <form align="center" name="user" action="/insert/1" method="GET">
+    	<h4 th:text="${SQL}"></h4>
+    	<table align="center">
+    		<tr>
+    			<td>姓名</td>
+    			<td>
+    				<input type="text" name="name" required/>
+				</td>
+    		</tr>
+    		<tr>
+    			<td>入学日期</td>
+    			<td>
+    				<input type="date" name="date" required/>
+				</td>
+    		</tr>
+    		<tr>
+    			<td>学号</td>
+    			<td>
+    				<input type="text" name="sid" required/>
+				</td>
+    		</tr>
+    		<tr>
+    			<td>电话</td>
+    			<td>
+    				<input type="text" name="phone" required/>
+				</td>
+    		</tr>
+    		<tr>
+    			<td>类型</td>
+    			<td>
+    				<select name="type" required>
+		                <option value="统招全日制">统招全日制</option>
+		                <option value="成人高考">成人高考</option>
+		                <option value="远程教育">远程教育</option>
+		                <option value="自学考试">自学考试</option>
+		            </select>
+				</td>
+    		</tr>
+    	</table>
+    	<button>插入</button>
+    </form>	
+  </body>
+</html>

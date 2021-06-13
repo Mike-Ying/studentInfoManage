@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SELECT</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        body {
+        	background-color:#6495ed;
+        }
+        
+        h1 {
+        	text-align:center;
+        }
+        
+        table {
+        	background-color:#e0ffff;
+	    	border-collapse: collapse;
+		}
+
+		table th,
+		table td {
+		    border: 2px solid gray;
+		    padding: 2px;
+		    vertical-align: center;
+		    text-align: center;
+		}
+
+		table thead {
+		    background: #56ceb8;
+		    color: white;
+		}
+		
+		table thead tr {
+		    height: 30px;
+		}
+		
+		table tbody tr {
+		    height: 20px;
+		}
+		
+		table tbody th {
+		    text-align: left;
+		    vertical-align: center;
+		}
+		
+		table tbody td {
+		    text-align: left;
+		    vertical-align: center;
+		}
+        
+        div>button {
+        	margin:10px;
+        	padding:6px 10px 6px 10px;
+        	background-color:white;
+        }
+        
+    </style>
+  </head>
+  <body>
+    <h1>学生信息管理系统</h1>
+  	<table align="center">
+	    <thead>
+	    <tr>
+	        <th width="20%">姓名</th>
+	        <th width="20%">入学日期</th>
+	        <th width="10%">学号</th>
+	        <th width="20%">电话</th>
+	        <th width="10%">类型</th>
+	    </tr>
+	    </thead>
+	    <tbody>
+	    <tr th:each="user:${users}">
+	        <td style="text-align:center;" th:text="${user.getName()}"></td>
+	        <td style="text-align:center;" th:text="${user.getDate()}"></td>
+	        <td style="text-align:center;" th:text="${user.getSid()}"></td>
+	        <td style="text-align:center;" th:text="${user.getPhone()}"></td>
+	        <td style="text-align:center;" th:text="${user.getType()}"></td>
+	    </tr>
+	    </tbody>
+	</table>
+	<div align="center">
+		<button onclick="window.location.href='/insert'">插入</button>
+		<button onclick="window.location.href='/update'">更新</button>
+		<button onclick="window.location.href='/delete'">删除</button>
+	</div>
+  </body>
+</html>

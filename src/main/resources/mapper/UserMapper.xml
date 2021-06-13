@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.demo.mapper.UserMapper">
+	<select id="getUser" resultType="UserBean">
+		select * from user_test
+	</select>
+	<insert id="insertUser" parameterType="UserBean" useGeneratedKeys="true" keyProperty="name">
+		insert into
+		user_test(name,date,sid,phone,type) values(#{name},#{date},#{sid},#{phone},#{type})
+	</insert>
+	<update id="updateUser" parameterType="UserBean">
+		update user_test set
+		date=#{date},sid=#{sid},phone=#{phone},type=#{type} where name = #{name}
+	</update>
+	<delete id="deleteUser" parameterType="String">
+		delete from user_test
+		where name=#{name}
+	</delete>
+	<delete id ="clearUser">
+		truncate table user_test
+	</delete>
+</mapper>
